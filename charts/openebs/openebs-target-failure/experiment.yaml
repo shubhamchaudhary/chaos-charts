@@ -59,6 +59,6 @@ spec:
     labels:
       name: openebs-target-failure
     configmaps:
-    - name: data-persistence-configmap
+    - name: target-failure
       data:
         parameters.yml: |
