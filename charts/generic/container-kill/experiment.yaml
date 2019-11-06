@@ -1,6 +1,7 @@
 apiVersion: litmuschaos.io/v1alpha1
 description:
-  message: "Kills a container belonging to an application pod \n"
+  message: |
+    Kills a container belonging to an application pod
 kind: ChaosExperiment
 metadata:
   name: container-kill
@@ -15,12 +16,15 @@ spec:
     - /bin/bash
     env:
     - name: ANSIBLE_STDOUT_CALLBACK
-      value: default
+      value: 'default'
+
+    # only pumba supported
+    # For pumba image use : gaiaadm/pumba:0.4.8
+    - name: LIB_IMAGE  
+      value: 'gaiaadm/pumba:0.4.8' 
+         
     - name: TARGET_CONTAINER
-      value: ""
-    - name: KILL_MODE
-      value: ""
-    - name: LIB
-      value: ""
+      value: ''
+
     labels:
       name: container-kill

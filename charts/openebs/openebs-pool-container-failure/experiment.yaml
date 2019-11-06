@@ -30,6 +30,8 @@ spec:
     - name: LIVENESS_APP_LABEL
       value: ''
 
+    # only pumba supported
+    # For pumba image use : gaiaadm/pumba:0.4.8
     - name: LIB_IMAGE  
       value: 'gaiaadm/pumba:0.4.8' 
 

@@ -27,9 +27,6 @@ spec:
     - name: APP_PVC
       value: ''
 
-    - name: FORCE
-      value: 'true'
-
     - name: LIVENESS_APP_LABEL
       value: ''
 

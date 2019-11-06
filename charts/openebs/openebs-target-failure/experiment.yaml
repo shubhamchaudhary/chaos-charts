@@ -30,9 +30,8 @@ spec:
     - name: CONTAINER_RUNTIME
       value: 'docker' 
 
-    - name: FORCE
-      value: 'true'
-
+  # only pumba supported
+  # For pumba image use : gaiaadm/pumba:0.4.8
     - name: LIB_IMAGE
       value: 'gaiaadm/pumba:0.4.8'
 
@@ -47,14 +46,14 @@ spec:
 
    # CHAOS_TYPE values :  target-zrepl-kill , target-kill , target-delete , jiva-ctrl-kill
     - name: CHAOS_TYPE
-      value: "target-zrepl-kill"
+      value: 'target-zrepl-kill'
 
    # TARGET_CONTAINER values: cstor-volume-mgmt , cstor-istgt
     - name: TARGET_CONTAINER
-      value: "cstor-volume-mgmt"
+      value: 'cstor-volume-mgmt'
 
     - name: DEPLOY_TYPE
-      value: "deployment"
+      value: 'deployment'
 
     labels:
       name: openebs-target-failure
