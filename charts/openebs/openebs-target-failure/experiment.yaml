@@ -11,28 +11,54 @@ metadata:
   version: 0.1.1
 spec:
   definition:
-    image: "openebs/ansible-runner:ci"
+    image: "litmuschaos/ansible-runner:ci"
     args:
     - -c
-    - ansible-playbook ./experiments/chaos/openebs_target_failure/test.yml -i /etc/ansible/hosts -vv; exit 0
+    - ansible-playbook ./experiments/openebs/openebs-target-failure/openebs_target_failure_ansible_logic.yml -i /etc/ansible/hosts -vv; exit 0
     command:
     - /bin/bash
     env:
     - name: ANSIBLE_STDOUT_CALLBACK
-      value: default
-    - name: TARGET_NAMESPACE
-      value: "openebs"
+      value: 'default'
+
+    - name: APP_PVC
+      value: ''
+
+    - name: OPENEBS_NAMESPACE
+      value: 'openebs'
+
+    - name: CONTAINER_RUNTIME
+      value: 'docker' 
+
+    - name: FORCE
+      value: 'true'
+
+    - name: LIB_IMAGE
+      value: 'gaiaadm/pumba:0.4.8'
+
     - name: DATA_PERSISTENCE
-      value: ""
+      value: ''
+
+    - name: LIVENESS_APP_LABEL
+      value: ''
+
+    - name: LIVENESS_APP_NAMESPACE
+      value: ''
+
+   # CHAOS_TYPE values :  target-zrepl-kill , target-kill , target-delete , jiva-ctrl-kill
     - name: CHAOS_TYPE
       value: "target-zrepl-kill"
+
+   # TARGET_CONTAINER values: cstor-volume-mgmt , cstor-istgt
     - name: TARGET_CONTAINER
       value: "cstor-volume-mgmt"
+
     - name: DEPLOY_TYPE
       value: "deployment"
+
     labels:
       name: openebs-target-failure
     configmaps:
-    - name: target-failure
+    - name: data-persistence-configmap
       data:
         parameters.yml: |
