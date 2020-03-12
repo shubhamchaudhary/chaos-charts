@@ -58,6 +58,10 @@ spec:
     - name: PLATFORM
       value: 'GKE'
 
+    # Provide the memory percentage
+    - name: MEMORY_PERCENTAGE
+      value: '90' # in percentage
+
     - name: LIB
       value: 'litmus'
       
