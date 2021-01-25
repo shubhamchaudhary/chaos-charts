@@ -1,0 +1,31 @@
+apiVersion: litmuchaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  name: mer-pod-delete 
+  version: 0.1.0
+  annotations:
+    categories: mercedes
+    repository: https://github.com/litmuschaos/litmus-go/tree/master/mercedes/pod-delete
+    support: https://kubernetes.slack.com/messages/CNXNB0ZTN
+spec:
+  displayName: mer-pod-delete 
+  categoryDescription: >
+    kills nginx pods in a random manner 
+  keywords: 
+    - "pods" 
+    - "kubernetes" 
+    - "sample-category" 
+    - "nginx"
+  maturity: alpha 
+  minKubeVersion: 1.12.0 
+  provider: 
+    name: Mayadata
+  maintainers: 
+    - name: ksatchit 
+      email: ksatchit@mayadata.io
+  links: 
+    - name: Documentation 
+      url: https://docs.litmuschaos.io/docs/getstarted/ 
+  icon:
+    - url: 
+      mediatype: ""

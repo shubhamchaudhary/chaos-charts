@@ -1,5 +1,0 @@
-packageName: test
-experiments:
-  - name: sample-pod-delete
-    CSV: sample-pod-delete.chartserviceversion.yaml
-    desc: "sample-pod-delete"

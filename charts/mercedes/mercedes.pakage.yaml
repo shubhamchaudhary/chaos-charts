@@ -1,0 +1,5 @@
+packageName: mecedes
+experiments:
+  - name: mer-pod-delete
+    CSV: mer-pod-delete.chartserviceversion.yaml
+    desc: "mer-pod-delete"
