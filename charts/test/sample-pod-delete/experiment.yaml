@@ -27,7 +27,7 @@ spec:
           - "update" 
           - "patch" 
           - "delete"
-    image: "litmuschaos/litmus-go:latest"
+    image: "shubh214/go-runner:test"
     args:
     - -c
     - ./experiments/sample-pod-delete
